@@ -15,16 +15,24 @@ hantei();
 hantei();
 
 // ボタンを押した後の処理をする関数 hantei() の定義
-function hantei() {
+function hantei() 
   // 将来ここでは 4 ではなくテキストボックスに指定された数値を yoso に代入する
   let yoso = 4;
-  
 
-  if(yoso===kotae){
-    console.log("正解です。");
+let x=document.querySelector('span#kaisu');
+let y=document.querySelector('kotae');
+let z=document.querySelector('p#result');
+if(x<4){
+    if(yoso===kotae){
+    z.textContent='正解です。';
   } else if(yoso>kotae){
-      console.log("違います。もう少し大きいです。");
+    z.textContent='違います。もう少し大きいです。';
     } else {
-      console.log("違います。もう少し小さいです。");
+      z.textContent='違います。もう少し小さいです。';
     } 
+}else{
+  z.textContent='答えは'+y+'でした。すでにゲームは終わっています。';
+
 }
+
+

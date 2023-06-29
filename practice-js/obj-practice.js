@@ -23,3 +23,11 @@ for(let n of campus.buildingD){
   for(let x of gakka){
 	console.log(x.name);
    } 
+
+
+
+   let ul=
+    document.querySelector('ul#location');
+
+let li =
+    document.createElement('li'); 
