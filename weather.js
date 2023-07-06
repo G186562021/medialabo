@@ -46,6 +46,13 @@ let data = {
 };
 
 ////////// 課題3-2 ここからプログラムを書こう
+let b = document.querySelector('#print');
+b.addEventListener('click', kensaku);
+function kensaku() {
+	let i = document.querySelector('input[name="area"]');
+	let area = i.value;
+  let p2 = document.querySelector('span#basyo');	
+  p2.textContent = area;
 console.log("場所:"+data.name); 
 for(n of data.weather){
   console.log("天気:"+ n.description);
@@ -55,3 +62,4 @@ console.log("最低気温:"+data.main.temp_min);
 console.log("湿度:"+data.main.humidity); 
 console.log("風速:"+data.wind.speed); 
 console.log("風向き:"+data.wind.deg); 
+}
