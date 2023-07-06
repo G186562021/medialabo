@@ -7,10 +7,10 @@ console.log('答え（デバッグ用）: ' + kotae);
 let kaisu = 0;
 
 let b = document.querySelector('#print');
-b.addEventListener('click', nyuuryoku);
+b.addEventListener('click', hantei);
 
 
-function nyuuryoku() {
+function hantei() {
 	let i = document.querySelector('input[name="kaitou"]');
 	let answer = i.value;
   let p2 = document.querySelector('span#answer');	
