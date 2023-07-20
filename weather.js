@@ -49,17 +49,51 @@ let data = {
 let b = document.querySelector('#print');
 b.addEventListener('click', kensaku);
 function kensaku() {
-	let i = document.querySelector('input[name="area"]');
-	let area = i.value;
-  let p2 = document.querySelector('span#basyo');	
-  p2.textContent = area;
-console.log("場所:"+data.name); 
-for(n of data.weather){
-  console.log("天気:"+ n.description);
-} 
-console.log("最高気温:"+data.main.temp_max); 
-console.log("最低気温:"+data.main.temp_min); 
-console.log("湿度:"+data.main.humidity); 
-console.log("風速:"+data.wind.speed); 
-console.log("風向き:"+data.wind.deg); 
+  let rs = document.querySelectorAll('input[name="area"]');
+  for (let r of rs) {
+      if (r.checked) {        // r が選択されていたら
+          console.log(r.id);
+            let url ='https://www.nishita-lab.org/web-contents/jsons/openweather/' + r.id + '.json';
+  axios.get(url)
+		.then(showResult)
+		.catch(showError)
+		.then(finish);
+      }
+  }
+
+
+}
+function showResult(resp) {
+	// サーバから送られてきたデータを出力
+	let data = resp.data;
+
+	// data が文字列型なら，オブジェクトに変換する
+	if (typeof data === 'string') {
+		data = JSON.parse(data);
+	}
+  console.log(data);
+	// data をコンソールに出力
+	console.log(data.weather.description);
+
+  let a =document.querySelector('h2#result');
+  a.textContent= data.name+'(緯度：'+data.coord.lon+',経度：'+data.coord.lat+')の天気を表示します';
+
+  let b=document.querySelector('p#tenki');
+ 
+
+  let c=document.querySelector('p#kion');
+
+	// data.x を出力
+	console.log(data.x);
+}
+
+// 通信エラーが発生した時の処理
+function showError(err) {
+
+	console.log(err);
+}	
+
+// 通信の最後にいつも実行する処理
+function finish() {
+	console.log('Ajax 通信が終わりました');
 }

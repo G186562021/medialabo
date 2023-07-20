@@ -4,14 +4,20 @@
     <meta charset="utf-8">
     <title>世界の天気</title>
     <link rel="stylesheet"href="project.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
     <script src="weather.js" defer></script>
   </head>
   <body>
     
     <label for="area">どの地域の天気が知りたいですか: </label>
-    <input type="text" name="area" size="5">
+    <input type="radio" name="area" id="360630" value="Cairo">
+    <lavel for="Cairo">カイロ</lavel>
     <button id="print">表示</button>
-    <p><span id="basyo"></span>の天気を表示します</p>
+    <h2 id="result">ここに結果を表示します</h2>
+    <p id="tenki"> </p>
+    <p id="kion"> </p>
+    <p id="situdo"> </p>
+    <p id="kaze"> </p>
 
     
   </body>
