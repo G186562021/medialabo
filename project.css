@@ -3,5 +3,15 @@ h1{
     background: linear-gradient(45deg, red, white);
 }
 h2{
-    color: gray;
+    color: whitesmoke;
+    background: linear-gradient(45deg, Blue, white);
+}
+h3{
+    color: whitesmoke;
+    background: linear-gradient(45deg, #5396ed, white);
+}
+label{
+    color: red;
+    background: yellow;
+    
 }

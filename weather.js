@@ -79,9 +79,15 @@ function showResult(resp) {
   a.textContent= data.name+'(緯度：'+data.coord.lon+',経度：'+data.coord.lat+')の天気を表示します';
 
   let b=document.querySelector('p#tenki');
- 
 
   let c=document.querySelector('p#kion');
+  c.textContent='最高気温：'+data.main.temp_max+'℃,最低気温：'+data.main.temp_min+'℃';
+
+  let d=document.querySelector('p#situdo');
+  d.textContent='湿度：'+data.main.humidity+'%';
+
+  let e=document.querySelector('p#kaze');
+  e.textContent='風速：'+data.wind.speed+'m/s';
 
 	// data.x を出力
 	console.log(data.x);
