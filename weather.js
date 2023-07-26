@@ -88,6 +88,7 @@ function showResult(resp) {
 
   let e=document.querySelector('p#kaze');
   e.textContent='風速：'+data.wind.speed+'m/s';
+  
 
 	// data.x を出力
 	console.log(data.x);
