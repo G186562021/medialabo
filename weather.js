@@ -45,6 +45,7 @@ let data = {
   "cod": 200
 };
 
+
 ////////// 課題3-2 ここからプログラムを書こう
 let b = document.querySelector('#print');
 b.addEventListener('click', kensaku);
@@ -88,7 +89,7 @@ function showResult(resp) {
 
   let e=document.querySelector('p#kaze');
   e.textContent='風速：'+data.wind.speed+'m/s';
-  
+
 
 	// data.x を出力
 	console.log(data.x);
